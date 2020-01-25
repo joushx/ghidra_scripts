@@ -1,4 +1,4 @@
-# Applies IDR map files
+#Applies IDR map file to the listing
 #@author Johannes Mittendorfer
 #@category Delphi
 #@keybinding 
@@ -66,11 +66,11 @@ def rename_function(name, listing):
 
 	func = listing.getFunctionContaining(name[0])
 	if(func == None):
-		return
+		createFunction(name[0], name[1])
+	else:
+		func.setName(name[1], SourceType.IMPORTED)
 
-	func.setName(name[1], SourceType.IMPORTED)
-
-contents = read_file("<Path to MAP file>")
+contents = read_file("/home/johannes/.wine/drive_c/Program Files (x86)/FBS/Znv.map")
 lines = parse_file(contents)
 names = generate_names(lines)
 rename_functions(names)
