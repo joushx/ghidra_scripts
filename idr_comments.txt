@@ -2,7 +2,7 @@
 #@author Johannes Mittendorfer
 #@category Delphi
 #@keybinding 
-#@menupath 
+#@menupath Tools.Delphi.Comments
 #@toolbar 
 
 from ghidra.program.model.listing import CodeUnit
